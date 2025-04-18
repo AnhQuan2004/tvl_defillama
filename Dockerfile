@@ -16,6 +16,6 @@ COPY main.py .
 # Make port available to the world outside this container (Cloud Run uses $PORT)
 # EXPOSE 5000 # EXPOSE is more for documentation/inter-container communication
 
-# Run the application using Gunicorn (JSON array format recommended)
+# Run the application using Gunicorn (shell form to allow $PORT expansion)
 # Bind to 0.0.0.0 and use the PORT environment variable provided by Cloud Run
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "--workers", "1", "--threads", "8", "--timeout", "0", "main:app"]
+CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 main:app
