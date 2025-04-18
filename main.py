@@ -34,7 +34,7 @@ class ChainDefillama(Enum):
             # Case-insensitive matching
             if item.value.lower() == value.lower():
                 return item
-        return None # Or raise ValueError("Invalid chain name")
+        return None 
 
 
 class DefillamaService:
