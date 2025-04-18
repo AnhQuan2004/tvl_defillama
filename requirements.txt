@@ -1,0 +1,7 @@
+Flask
+Flask-RESTX
+uvicorn
+gunicorn
+flipside
+python-dotenv
+requests
